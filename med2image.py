@@ -3,7 +3,7 @@ import  sys
 sys.path.insert(1, os.path.join(os.path.dirname(__file__), '..'))
 import  argparse
 
-from    med2image           import med2image
+from    util           import med2image
 from    argparse            import RawTextHelpFormatter
 from    argparse            import ArgumentParser
 from    pfmisc._colors      import Colors
@@ -250,8 +250,7 @@ if args.man or args.synopsis:
     sys.exit(1)
 
 
-def med2img(input_file, output_folder):
-    # args = Object()
+def convert(input_file, output_folder):
     args.inputFile = input_file
     args.outputFileStem = output_folder
     imgConverter = med2image.object_factoryCreate(args).C_convert
