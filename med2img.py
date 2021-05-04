@@ -1,9 +1,8 @@
 import  os
 import  sys
-sys.path.insert(1, os.path.join(os.path.dirname(__file__), '..'))
 import  argparse
 
-from    util           import med2image
+from    util       import *
 from    argparse            import RawTextHelpFormatter
 from    argparse            import ArgumentParser
 from    pfmisc._colors      import Colors
@@ -253,11 +252,11 @@ if args.man or args.synopsis:
 def convert(input_file, output_folder):
     args.inputFile = input_file
     args.outputFileStem = output_folder
-    imgConverter = med2image.object_factoryCreate(args).C_convert
+    imgConverter = object_factoryCreate(args).C_convert
     imgConverter.tic()
     imgConverter.run()
     print("Elapsed time = %f seconds" % imgConverter.toc())
 
 
 if __name__ == "__main__":
-    med2img("./sample/filtered_adni_11/002_S_4262_7/mri.nii", "./outputs/y.png")
+    convert("./sample/filtered_adni_11/002_S_4262_7/mri.nii", "./outputs/y.png")
