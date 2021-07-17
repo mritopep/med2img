@@ -2,7 +2,7 @@ import  os
 import  sys
 import  argparse
 
-from    util       import *
+from    med2img.util       import *
 from    argparse            import RawTextHelpFormatter
 from    argparse            import ArgumentParser
 from    pfmisc._colors      import Colors
