@@ -3,6 +3,7 @@ import  sys
 import  argparse
 
 from    med2img.util       import *
+from med2img.util import object_factoryCreate
 from    argparse            import RawTextHelpFormatter
 from    argparse            import ArgumentParser
 from    pfmisc._colors      import Colors
